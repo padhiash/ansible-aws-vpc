@@ -12,7 +12,7 @@
 
     - name: Create vprofile ec2 key
       ec2_key:
-        name: vprofile-key
+        name: bastion-key
         region: "{{region}}"
       register: key_out
 
@@ -38,7 +38,7 @@
 
     - name: Creating Bastion Host
       ec2:
-        key_name: vprofile-key
+        key_name: bastion-key
         region: "{{region}}"
         instance_type: t2.micro
         image: "{{ bastion_ami }}"
