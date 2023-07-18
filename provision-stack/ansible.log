@@ -1,0 +1,80 @@
+2023-07-18 08:52:39,629 p=2385 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro with yaml plugin: YAML inventory has
+invalid structure, it should be a dictionary, got: <class 'ansible.parsing.yaml.objects.AnsibleUnicode'>
+
+2023-07-18 08:52:39,629 p=2385 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro with ini plugin: /home/ubuntu/ansible-aws-
+vpc/provision-stack/inventory-vpro:2: Expected key=value host variable assignment, got: app01
+
+2023-07-18 08:52:39,629 p=2385 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro as an inventory source
+
+2023-07-18 08:52:39,630 p=2385 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2023-07-18 08:52:39,633 p=2385 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2023-07-18 08:52:39,775 p=2385 u=ubuntu n=ansible | ERROR! A malformed block was encountered while loading a block. The ds ([{'name': 'Install jdk, maven, git', 'apt': {'name': '{{item}}', 'state': 'present', 'update_cache': True}, 'loop': ['git', 'openjdk-8-jdk', 'maven']}, {'name': 'Clone source code from github', 'git': {'repo': 'https://github.com/devopshydclub/vprofile-project.git', 'dest': './Vprofile-repo', 'version': 'vp-rem'}, 'register': 'git_status'}, {'name': 'mvn install command to build artifact', 'command': 'mvn install', 'args': {'chdir': 'Vprofile-repo'}, 'when': 'git_status.changed', 'register': 'mvn_info'}, {'name': 'Copy artifacts to files directory', 'copy': {'src': '{{item}}', 'dest': 'files/ROOT.war'}, 'with_fileglob': 'Vprofile-repo/target/*.war'}, 'name Copy SQL file to files directory', {'copy': {'src': 'Vprofile-repo/src/main/resources/db_backup.sql', 'dest': 'files/db_backup.sql'}}]) should be a dict but was a <class 'list'>
+2023-07-18 09:17:35,275 p=3241 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro with yaml plugin: YAML inventory has
+invalid structure, it should be a dictionary, got: <class 'ansible.parsing.yaml.objects.AnsibleUnicode'>
+
+2023-07-18 09:17:35,276 p=3241 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro with ini plugin: /home/ubuntu/ansible-aws-
+vpc/provision-stack/inventory-vpro:2: Expected key=value host variable assignment, got: app01
+
+2023-07-18 09:17:35,276 p=3241 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro as an inventory source
+
+2023-07-18 09:17:35,276 p=3241 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2023-07-18 09:17:35,280 p=3241 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2023-07-18 09:17:35,428 p=3241 u=ubuntu n=ansible | ERROR! no module/action detected in task.
+
+The error appears to be in '/home/ubuntu/ansible-aws-vpc/provision-stack/build.yml': line 38, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - name: Copy SQL file to files directory
+      ^ here
+
+2023-07-18 09:20:48,564 p=3264 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro with yaml plugin: YAML inventory has
+invalid structure, it should be a dictionary, got: <class 'ansible.parsing.yaml.objects.AnsibleUnicode'>
+
+2023-07-18 09:20:48,564 p=3264 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro with ini plugin: /home/ubuntu/ansible-aws-
+vpc/provision-stack/inventory-vpro:2: Expected key=value host variable assignment, got: app01
+
+2023-07-18 09:20:48,564 p=3264 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro as an inventory source
+
+2023-07-18 09:20:48,565 p=3264 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2023-07-18 09:20:48,568 p=3264 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2023-07-18 09:20:48,728 p=3264 u=ubuntu n=ansible | PLAY [Generate artifact, copy artifacts & sql file to files directory] ***************************************************************
+2023-07-18 09:20:48,737 p=3264 u=ubuntu n=ansible | TASK [Gathering Facts] ***************************************************************************************************************
+2023-07-18 09:20:50,046 p=3264 u=ubuntu n=ansible | ok: [localhost]
+2023-07-18 09:20:50,062 p=3264 u=ubuntu n=ansible | TASK [Install jdk, maven, git] *******************************************************************************************************
+2023-07-18 09:20:58,068 p=3264 u=ubuntu n=ansible | ok: [localhost] => (item=git)
+2023-07-18 09:21:36,622 p=3264 u=ubuntu n=ansible | changed: [localhost] => (item=openjdk-8-jdk)
+2023-07-18 09:21:47,375 p=3264 u=ubuntu n=ansible | changed: [localhost] => (item=maven)
+2023-07-18 09:21:47,390 p=3264 u=ubuntu n=ansible | TASK [Clone source code from github] *************************************************************************************************
+2023-07-18 09:21:53,053 p=3264 u=ubuntu n=ansible | changed: [localhost]
+2023-07-18 09:21:53,065 p=3264 u=ubuntu n=ansible | TASK [mvn install command to build artifact] *****************************************************************************************
+2023-07-18 09:22:32,926 p=3264 u=ubuntu n=ansible | changed: [localhost]
+2023-07-18 09:22:32,950 p=3264 u=ubuntu n=ansible | TASK [Copy artifacts to files directory] *********************************************************************************************
+2023-07-18 09:22:34,077 p=3264 u=ubuntu n=ansible | changed: [localhost] => (item=/home/ubuntu/ansible-aws-vpc/provision-stack/Vprofile-repo/target/vprofile-v2.war)
+2023-07-18 09:22:34,088 p=3264 u=ubuntu n=ansible | TASK [Copy SQL file to files directory] **********************************************************************************************
+2023-07-18 09:22:34,519 p=3264 u=ubuntu n=ansible | changed: [localhost]
+2023-07-18 09:22:34,536 p=3264 u=ubuntu n=ansible | PLAY RECAP ***************************************************************************************************************************
+2023-07-18 09:22:34,536 p=3264 u=ubuntu n=ansible | localhost                  : ok=6    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-07-18 09:36:52,423 p=8577 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro with yaml plugin: YAML inventory has
+invalid structure, it should be a dictionary, got: <class 'ansible.parsing.yaml.objects.AnsibleUnicode'>
+
+2023-07-18 09:36:52,423 p=8577 u=ubuntu n=ansible | [WARNING]:  * Failed to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro with ini plugin: /home/ubuntu/ansible-aws-
+vpc/provision-stack/inventory-vpro:2: Expected key=value host variable assignment, got: app01
+
+2023-07-18 09:36:52,424 p=8577 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-vpro as an inventory source
+
+2023-07-18 09:36:52,424 p=8577 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2023-07-18 09:36:52,430 p=8577 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2023-07-18 09:36:52,766 p=8577 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] ***************************************************
+2023-07-18 09:36:52,767 p=8577 u=ubuntu n=ansible | skipping: no hosts matched
+2023-07-18 09:36:52,767 p=8577 u=ubuntu n=ansible | PLAY RECAP ***************************************************************************************************************************
