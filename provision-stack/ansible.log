@@ -78,3 +78,32 @@ vpc/provision-stack/inventory-vpro:2: Expected key=value host variable assignmen
 2023-07-18 09:36:52,766 p=8577 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] ***************************************************
 2023-07-18 09:36:52,767 p=8577 u=ubuntu n=ansible | skipping: no hosts matched
 2023-07-18 09:36:52,767 p=8577 u=ubuntu n=ansible | PLAY RECAP ***************************************************************************************************************************
+2023-07-18 09:52:03,304 p=9024 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] ***************************************************
+2023-07-18 09:52:03,313 p=9024 u=ubuntu n=ansible | TASK [Gathering Facts] ***************************************************************************************************************
+2023-07-18 09:52:05,106 p=9024 u=ubuntu n=ansible | ok: [app01]
+2023-07-18 09:52:05,363 p=9024 u=ubuntu n=ansible | ok: [cntl]
+2023-07-18 09:52:06,262 p=9024 u=ubuntu n=ansible | ok: [rmq01]
+2023-07-18 09:52:06,352 p=9024 u=ubuntu n=ansible | ok: [web01]
+2023-07-18 09:52:06,671 p=9024 u=ubuntu n=ansible | ok: [mc01]
+2023-07-18 09:52:07,858 p=9024 u=ubuntu n=ansible | ok: [db01]
+2023-07-18 09:52:07,875 p=9024 u=ubuntu n=ansible | TASK [Import VPC setup Variable] *****************************************************************************************************
+2023-07-18 09:52:07,919 p=9024 u=ubuntu n=ansible | ok: [cntl]
+2023-07-18 09:52:07,939 p=9024 u=ubuntu n=ansible | ok: [web01]
+2023-07-18 09:52:07,963 p=9024 u=ubuntu n=ansible | ok: [app01]
+2023-07-18 09:52:07,986 p=9024 u=ubuntu n=ansible | ok: [rmq01]
+2023-07-18 09:52:07,986 p=9024 u=ubuntu n=ansible | ok: [mc01]
+2023-07-18 09:52:07,992 p=9024 u=ubuntu n=ansible | ok: [db01]
+2023-07-18 09:52:08,002 p=9024 u=ubuntu n=ansible | TASK [Update hosts file for all the hosts] *******************************************************************************************
+2023-07-18 09:52:08,802 p=9024 u=ubuntu n=ansible | changed: [web01]
+2023-07-18 09:52:08,810 p=9024 u=ubuntu n=ansible | changed: [app01]
+2023-07-18 09:52:08,810 p=9024 u=ubuntu n=ansible | changed: [mc01]
+2023-07-18 09:52:08,811 p=9024 u=ubuntu n=ansible | changed: [rmq01]
+2023-07-18 09:52:08,847 p=9024 u=ubuntu n=ansible | changed: [cntl]
+2023-07-18 09:52:09,107 p=9024 u=ubuntu n=ansible | changed: [db01]
+2023-07-18 09:52:09,125 p=9024 u=ubuntu n=ansible | PLAY RECAP ***************************************************************************************************************************
+2023-07-18 09:52:09,125 p=9024 u=ubuntu n=ansible | app01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-07-18 09:52:09,125 p=9024 u=ubuntu n=ansible | cntl                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-07-18 09:52:09,125 p=9024 u=ubuntu n=ansible | db01                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-07-18 09:52:09,126 p=9024 u=ubuntu n=ansible | mc01                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-07-18 09:52:09,126 p=9024 u=ubuntu n=ansible | rmq01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-07-18 09:52:09,126 p=9024 u=ubuntu n=ansible | web01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
