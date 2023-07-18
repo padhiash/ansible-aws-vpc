@@ -212,43 +212,44 @@
     - name: Insert/Update Inventory file provision-stack/Inventory-vpro
       blockinfile:
         path: provision-stack/inventory-vpro
-        block:
-          web01 ansible_host={{web01_out.tagged_instances[0].private_ip}}
-          app01 ansible_host={{app01_out.tagged_instances[0].private_ip}}
-          rmq01 ansible_host={{rmq01_out.tagged_instances[0].private_ip}}
-          mc01 ansible_host={{mc01_out.tagged_instances[0].private_ip}}
-          db01 ansible_host={{db01_out.tagged_instances[0].private_ip}}
+        block: |
+          web01 ansible_host={{ web01_out.tagged_instances[0].private_ip }}
+          app01 ansible_host={{ app01_out.tagged_instances[0].private_ip }}
+          rmq01 ansible_host={{ rmq01_out.tagged_instances[0].private_ip }}
+          mc01 ansible_host={{ mc01_out.tagged_instances[0].private_ip }}
+          db01 ansible_host={{ db01_out.tagged_instances[0].private_ip }}
           cntl ansible_host=127.0.0.1 ansible_connection=local
-
-         [websrvgrp]\n
-         web01]\n
           
-         [appsrvgrp]\n
-         app01]\n
+          [websrvgrp]
+          web01
           
-         [mcsrvgrp]\n
-         mc01\n
+          [appsrvgrp]
+          app01
           
-         [rmqsrvgrp]\n
-         rmq01\n
+          [rmqsrvgrp]
+          rmq01
           
-         [dbsrvgrp]\n
-         db01\n
+          [mcsrvgrp]
+          mc01
           
-         [control]\n
-         cntl\n
+          [dbsrvgrp]
+          db01
           
-         [stack_inst:children]\n
-         websrvgrp\n
-         appsrvgrp\n
-         rmqsrvgrp\n
-         mcsrvgrp\n
-         dbsrvgrp\n
+          [control]
+          cntl
           
-         [stack_inst:vars]\n
-         ansible_user=ubuntu\n
-         ansible_ssh_private_key_file=loginkey_vpro.pem\n
-         #ansible_python_interpreter=/usr/bin/python3
+          [stack_inst:children]
+          websrvgrp
+          appsrvgrp
+          rmqsrvgrp
+          mcsrvgrp
+          dbsrvgrp
+          
+          [stack_inst:vars]
+          ansible_user=ubuntu
+          ansible_ssh_private_key_file=loginkey_vpro.pem
+          #ansible_python_interpreter=/usr/bin/python3
+        
 
 
 
