@@ -220,34 +220,34 @@
           db01 ansible_host={{db01_out.tagged_instances[0].private_ip}}
           cntl ansible_host=127.0.0.1 ansible_connection=local
 
-         [websrvgrp]
-         web01
+         [websrvgrp]\n
+         web01]\n
           
-         [appsrvgrp]
-         app01
+         [appsrvgrp]\n
+         app01]\n
           
-         [mcsrvgrp]
-         mc01
+         [mcsrvgrp]\n
+         mc01\n
           
-         [rmqsrvgrp]
-         rmq01
+         [rmqsrvgrp]\n
+         rmq01\n
           
-         [dbsrvgrp]
-         db01
+         [dbsrvgrp]\n
+         db01\n
           
-         [control]
-         cntl
+         [control]\n
+         cntl\n
           
-         [stack_inst:children]
-         websrvgrp
-         appsrvgrp
-         rmqsrvgrp
-         mcsrvgrp
-         dbsrvgrp
+         [stack_inst:children]\n
+         websrvgrp\n
+         appsrvgrp\n
+         rmqsrvgrp\n
+         mcsrvgrp\n
+         dbsrvgrp\n
           
-         [stack_inst:vars]
-         ansible_user=ubuntu
-         ansible_ssh_private_key_file=loginkey_vpro.pem
+         [stack_inst:vars]\n
+         ansible_user=ubuntu\n
+         ansible_ssh_private_key_file=loginkey_vpro.pem\n
          #ansible_python_interpreter=/usr/bin/python3
 
 
