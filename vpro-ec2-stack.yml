@@ -213,7 +213,7 @@
       blockinfile:
         path: provision-stack/inventory-vpro
         block:
-          web01 ansible_host={{{web01_out.tagged_instances[0].private_ip}}
+          web01 ansible_host={{web01_out.tagged_instances[0].private_ip}}
           app01 ansible_host={{app01_out.tagged_instances[0].private_ip}}
           rmq01 ansible_host={{rmq01_out.tagged_instances[0].private_ip}}
           mc01 ansible_host={{mc01_out.tagged_instances[0].private_ip}}
